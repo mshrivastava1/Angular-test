@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingEventsApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="event.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping List With Events</title>
+  </head>
+  <body>
+    <h1>Shopping List With Events:</h1>
+    <div id="list" ng-controller='ShoppingListController as list'>
+      <input type="text" ng-model="list.itemName" placeholder="item name">
+      <input type="text" ng-model="list.quantity" placeholder="quantity">
+      <button ng-click="list.addItem();">Add Item</button>
+
+      <shopping-list
+        items="list.items"
+        title="{{list.title}}"
+        on-remove="list.removeItem(index)"></shopping-list>
+      <!-- <ol>
+        <li ng-repeat="item in list.items">{{item.quantity}} of {{item.name}}
+      </ol> -->
+
+    </div>
+    <loading-spinner></loading-spinner>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="customDirectives.js"></script>
+  </head>
+  <body ng-app="customDirectives">
+
+    <div ng-controller="ShoppingListController1 as list">
+      <h3>Shopping List #1</h3>
+      <input type="text" ng-model="list.itemName" placeholder="item name"/>
+      <input type="text" ng-model="list.itemQuantity" placeholder="item quantity"/>
+      <button ng-click="list.addItem();">addItem</button>
+
+      <ol>
+        <list-item ng-repeat="item in list.items"></list-item>
+      </ol>
+
+    </div>
+
+    <div ng-controller="ShoppingListController2 as list">
+      <h3>Shopping List #2</h3>
+      <input type="text" ng-model="list.itemName" placeholder="item name"/>
+      <input type="text" ng-model="list.itemQuantity" placeholder="item qunatity"/>
+      <button ng-click="list.addItem();">Add Item</button>
+
+      <ol>
+      <list-item ng-repeat="item in list.items"></list-item>
+      
+      </ol>
+       <div class="error" ng-if="list.errorMessage">Error: {{list.errorMessage}}</div>
+    </div>
+  </body>
+</html>

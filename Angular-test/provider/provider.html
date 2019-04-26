@@ -1,0 +1,20 @@
+<html>
+<head>
+  <script src="angular.min.js"></script>
+  <script src="provider.js"></script>
+</head>
+<body ng-app="provider">
+
+
+  <div ng-controller="shoppingListController as list">
+    <input type="text" ng-model="list.itemName" placeholder="name"/>
+    <input type="text" ng-model="list.itemQuatity" placeholder="quantity"/>
+    <button ng-click="list.add();">Add Items</button>
+
+    <ol>
+      <li ng-repeat="item in list.items">
+       {{item.quantity}} of {{item.name}} <button ng-click="list.remove($itemIndex);">remove</button>
+    </ol>
+  </div>
+</body>
+</html>

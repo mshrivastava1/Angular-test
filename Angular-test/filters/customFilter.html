@@ -1,0 +1,19 @@
+<html>
+<head>
+  <script src="angular.min.js"></script>
+  <script src="filter.js"></script>
+</head>
+<body ng-app="filterModule">
+
+<div ng-controller="filterController">
+{{message}}
+</br>
+The new message
+{{message | changeMessage : 'customFilter' : 'newCustomFiler'| uppercase}}
+</br>
+
+</div>
+
+</body>
+
+</htm>

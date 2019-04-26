@@ -1,0 +1,21 @@
+<html>
+<head>
+  <script src="jquery-3.1.0.min.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="linkFunctionImpl.js"></script>
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body ng-app="LinkFunctionImpl">
+  <div ng-controller="ShoppingListController as list">
+    <h1>{{list.title}}</h1>
+    <input type="text" ng-model="list.name" placeholder="name"/>
+    <input type="text" ng-model="list.quantity" placeholder="quantity"/>
+    <button ng-click="list.add();">Add Items </button>
+    <shopping-list
+    id="list"
+        items="list.items"
+        title="{{list.title}}"
+        on-remove="list.remove($index)">
+  </div>
+</body>
+</html>

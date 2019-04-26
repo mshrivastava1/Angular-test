@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script src="angular.min.js"></script>
+    <script src="directiveAPI.js"></script>
+  </head>
+  <body ng-app="directiveApi">
+
+    <div ng-controller="ShoppingListController1 as list">
+      <h3>Shopping List #1</h3>
+      <input type="text" ng-model="list.itemName" placeholder="item name"/>
+      <input type="text" ng-model="list.itemQuantity" placeholder="item quantity"/>
+      <button ng-click="list.addItem();">addItem</button>
+
+      <shopping-list items="list.items" title="{{list.title}}" on-remove="list.removeItem()"></shopping-list>
+
+    </div>
+  </body>
+</html>

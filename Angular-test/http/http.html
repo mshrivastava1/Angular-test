@@ -1,0 +1,21 @@
+<html>
+<head>
+  <script src="angular.min.js"></script>
+  <script src="http.js"></script>
+</head>
+<body ng-app="http">
+  <div ng-controller="MenuCategoriesController as menu">
+    <ul>
+      <li ng-repeat="item in menu.categories"><a href="" ng-click="menu.logMenuItems(item.short_name,$index);">({{item.short_name}})</a> {{item.name}}
+        <ul>
+          <li  ng-repeat="category in menu.subCategories.menu_items" ng-show="item.active">
+            <span>---{{category.name}}</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
+
+<!-- ng-if="(menu.subCategories.menu_items.length!==0)" -->

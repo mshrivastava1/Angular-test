@@ -1,0 +1,23 @@
+<html>
+<head>
+  <script src="angular.min.js"></script>
+  <script src="binding.js"></script>
+</head>
+<body ng-app="Binding">
+
+<div ng-controller="BindingController">
+<button ng-click="numberOfWatchers()">
+number of watchers<button/></br>
+<button ng-click="logFirstName()">
+firstName </button>
+</br>
+{{firstName}}
+<button ng-click="setFullName()">
+set full name<button/></br>
+this is for the one time binding
+My full name is {{::fullname}}
+</div>
+
+</body>
+
+</htm>
